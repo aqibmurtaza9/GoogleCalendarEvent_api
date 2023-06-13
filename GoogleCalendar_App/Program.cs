@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
+builder.Services.AddRazorPages();
 builder.Services.AddScoped<IGoogleCalendarService, GoogleCalendarService>();
 var app = builder.Build();
 

@@ -30,7 +30,7 @@ namespace GoogleCalendar_App.Services
                 var credentials = new UserCredential(new GoogleAuthorizationCodeFlow(
                     new GoogleAuthorizationCodeFlow.Initializer
                     {
-                        ClientSecrets = new ClientSecrets { ClientId = "", ClientSecret = "" }
+                        ClientSecrets = new ClientSecrets { ClientId = "798723233176-5s05agfpq2p5jamqs2rglkuu444ohfef.apps.googleusercontent.com", ClientSecret = "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" }
                     }), "user", token);
 
 
@@ -97,6 +97,7 @@ namespace GoogleCalendar_App.Services
                 throw new Exception($"Failed to authenticate: {responseContent}");
             }
         }
+
 
     }
 }
