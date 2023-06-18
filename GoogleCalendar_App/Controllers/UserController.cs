@@ -19,12 +19,12 @@ namespace GoogleCalendar_App.Controllers
     public class UserController : Controller
     {
         private IGoogleCalendarService _googleCalendarService;
-        private IHttpContextAccessor _httpContextAccessor;
+       // private IHttpContextAccessor _httpContextAccessor;
 
-        public UserController(IGoogleCalendarService googleCalendarService, IHttpContextAccessor httpContextAccessor)
+        public UserController(IGoogleCalendarService googleCalendarService)
         {
             _googleCalendarService = googleCalendarService;
-            _httpContextAccessor = httpContextAccessor;
+         //   _httpContextAccessor = httpContextAccessor;
         }
 
         [HttpGet]

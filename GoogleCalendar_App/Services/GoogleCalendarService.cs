@@ -17,7 +17,6 @@ namespace GoogleCalendar_App.Services
     public class GoogleCalendarService : IGoogleCalendarService
     {
         private readonly HttpClient _httpClient;
-
         public GoogleCalendarService()
         {
             _httpClient = new HttpClient();
@@ -86,7 +85,6 @@ namespace GoogleCalendar_App.Services
                 Event newEvent = new Event()
                 {
                     Summary = googleCalendarReqDTO.Summary,
-                    Location = googleCalendarReqDTO.Location,
                     Description = googleCalendarReqDTO.Description,
                     Start = new EventDateTime()
                     {
@@ -118,7 +116,5 @@ namespace GoogleCalendar_App.Services
             }
 
         }
-
-
     }
 }
