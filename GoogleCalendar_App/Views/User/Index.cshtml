@@ -1,24 +1,13 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<button onclick="openGoogleAuthPopup()">Signin to access google calendar</button>
+﻿
+<form action="/auth/google" method="get">
+    <button type="submit" class="button">GoogleAuth</button>
+</form>
 
+<style>
+    .button{
+        background-color:dodgerblue;
+        color : white;
+        font-size : 16px;
 
-
-<script>
-    function openGoogleAuthPopup() {
-        fetch('/auth/google')
-            .then(response => response.text())
-            .then(html => {
-                var popupWindow = window.open('', 'googleAuthPopup', 'width=500,height=600');
-                popupWindow.document.open();
-                popupWindow.document.write(html);
-                popupWindow.document.close();
-            })
-            .catch(error => {
-                console.error('Error opening Google authentication popup:', error);
-            });
     }
-</script>
+</style>

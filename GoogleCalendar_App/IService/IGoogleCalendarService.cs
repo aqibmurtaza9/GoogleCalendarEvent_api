@@ -4,7 +4,8 @@ namespace GoogleCalendar_App.IService
 {
     public interface IGoogleCalendarService
     {
-        Task<string> Authenticate(string code, string redirectUri, string clientId, string clientSecret);
+        string GetAuthCode();
+        Task<GoogleTokenResponse> GetTokens(string code);
         string AddToGoogleCalendar(GoogleCalendarReqDTO googleCalendarReqDTO);
     }
 }

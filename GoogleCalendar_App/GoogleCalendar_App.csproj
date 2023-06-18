@@ -9,7 +9,8 @@
   <ItemGroup>
     <PackageReference Include="Google.Apis" Version="1.60.0" />
     <PackageReference Include="Google.Apis.Auth" Version="1.60.0" />
-    <PackageReference Include="Google.Apis.Calendar.v3" Version="1.60.0.3017" />
+    <PackageReference Include="Google.Apis.Auth.AspNetCore3" Version="1.60.0" />
+    <PackageReference Include="Google.Apis.Calendar.v3" Version="1.60.0.3074" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="6.0.18" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
