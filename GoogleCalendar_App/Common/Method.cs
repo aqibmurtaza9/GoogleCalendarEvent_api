@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using NodaTime.TimeZones;
+using System.Text;
 
 namespace GoogleCalendar_App.Common
 {
@@ -22,6 +23,18 @@ namespace GoogleCalendar_App.Common
 
             return result.ToString();
 
+        }
+
+        public static string WindowsToIana(string windowsTimeZoneId)
+        {
+            if (windowsTimeZoneId.Equals("UTC", StringComparison.Ordinal))
+                return "Etc/UTC";
+
+            var tzdbSource = TzdbDateTimeZoneSource.Default;
+            var windowsMapping = tzdbSource.WindowsMapping.PrimaryMapping
+                .FirstOrDefault(mapping => mapping.Key.Equals(windowsTimeZoneId, StringComparison.OrdinalIgnoreCase));
+
+            return windowsMapping.Value;
         }
     }
 }

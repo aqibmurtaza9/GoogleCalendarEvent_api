@@ -7,9 +7,6 @@ using Google.Apis.Services;
 using GoogleCalendar_App.Common;
 using GoogleCalendar_App.DTO;
 using GoogleCalendar_App.IService;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json.Linq;
-using System.Net.Http;
 using System.Text;
 
 namespace GoogleCalendar_App.Services
@@ -89,10 +86,12 @@ namespace GoogleCalendar_App.Services
                     Start = new EventDateTime()
                     {
                         DateTime = googleCalendarReqDTO.StartTime,
+                        //TimeZone = Method.WindowsToIana();    //users time zone
                     },
                     End = new EventDateTime()
                     {
                         DateTime = googleCalendarReqDTO.EndTime,
+                        //TimeZone = Method.WindowsToIana();    //users time zone
                     },
                     Reminders = new Event.RemindersData()
                     {
