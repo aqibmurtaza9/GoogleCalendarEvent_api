@@ -27,7 +27,7 @@ namespace GoogleCalendar_App.Services
                 var redirectURL = "https://localhost:7272/auth/callback";
                 string prompt = "consent";
                 string response_type = "code";
-                string clientID = "798723233176-5s05agfpq2p5jamqs2rglkuu444ohfef.apps.googleusercontent.com";
+                string clientID = ".apps.googleusercontent.com";
                 string scope = "https://www.googleapis.com/auth/calendar";
                 string access_type = "offline";
                 string redirect_uri_encode = Method.urlEncodeForGoogle(redirectURL);
@@ -42,8 +42,8 @@ namespace GoogleCalendar_App.Services
         }
         public async Task<GoogleTokenResponse> GetTokens(string code)
         {
-            var clientId = "798723233176-5s05agfpq2p5jamqs2rglkuu444ohfef.apps.googleusercontent.com";
-            string clientSecret = "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";
+            var clientId = ".apps.googleusercontent.com";
+            string clientSecret = "";
             var redirectURL = "https://localhost:7272/auth/callback";
             var tokenEndpoint = "https://accounts.google.com/o/oauth2/token";
             var content = new StringContent($"code={code}&redirect_uri={Uri.EscapeDataString(redirectURL)}&client_id={clientId}&client_secret={clientSecret}&grant_type=authorization_code", Encoding.UTF8, "application/x-www-form-urlencoded");
@@ -70,7 +70,7 @@ namespace GoogleCalendar_App.Services
                 var credentials = new UserCredential(new GoogleAuthorizationCodeFlow(
                     new GoogleAuthorizationCodeFlow.Initializer
                     {
-                        ClientSecrets = new ClientSecrets { ClientId = "798723233176-5s05agfpq2p5jamqs2rglkuu444ohfef.apps.googleusercontent.com", ClientSecret = "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" }
+                        ClientSecrets = new ClientSecrets { ClientId = ".apps.googleusercontent.com", ClientSecret = "" }
                     }), "user", token);
 
 
